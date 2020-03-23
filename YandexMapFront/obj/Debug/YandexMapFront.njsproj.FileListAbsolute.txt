@@ -1,0 +1,3 @@
+E:\VSProjects\Javascript\YandexMapFront\YandexMapFront\obj\Debug\YandexMapFront.njsprojAssemblyReference.cache
+E:\VSProjects\Javascript\YandexMapFront\YandexMapFront\obj\Debug\YandexMapFront.njsproj.CoreCompileInputs.cache
+E:\VSProjects\Javascript\YandexMapFront\YandexMapFront\bin\Microsoft.NodejsTools.WebRole.dll
