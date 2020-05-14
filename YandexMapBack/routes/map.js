@@ -5,15 +5,18 @@ var mark = require('../database/entity/marker').Marker;
 router.get('/',(req,res,next)=>{
 
     if (!req.isAuthenticated()){
-        res.end();
+        res.status(401).send("Not authentificated")
+        res.end()
+        return
     };
-
 })
 
 router.get('/get-marks',(req,res,next)=>{
 
     if (!req.isAuthenticated()){
         res.status(401).send("Not authentificated")
+        res.end()
+        return
     };
 
     mark.find({ user:req.user.username}).exec().then((val)=>{
@@ -33,7 +36,9 @@ router.get('/get-marks',(req,res,next)=>{
 router.post('/add-mark',(req,res,next)=>{
 
     if (!req.isAuthenticated()){
-        res.end();
+        res.status(401).send("Not authentificated")
+        res.end()
+        return
     };
 
     var newMarker = new mark({
@@ -52,7 +57,9 @@ router.post('/add-mark',(req,res,next)=>{
 router.post('/edit-mark',(req,res,next)=>{
 
     if (!req.isAuthenticated()){
-        res.end();
+        res.status(401).send("Not authentificated")
+        res.end()
+        return
     };
 
     let query = {"user":req.user.username, "name": req.body.oldName};
@@ -65,7 +72,9 @@ router.post('/edit-mark',(req,res,next)=>{
 router.post('/delete-mark',(req,res,next)=>{
 
     if (!req.isAuthenticated()){
-        res.end();
+        res.status(401).send("Not authentificated")
+        res.end()
+        return
     };
 
     mark.deleteOne({user:req.user.username, name: req.body.name}).exec().then((val)=>{
